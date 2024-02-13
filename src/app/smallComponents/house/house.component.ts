@@ -7,24 +7,24 @@ import { Component, Input } from '@angular/core';
   imports: [],
   animations: [
     trigger('zoom',[
-      state(':enter',style({
+      state('enter',style({
         transform: 'scale(1)'
       })),
-      state(':leave',style({
+      state('leave',style({
         transform: 'scale(1.3)'
       })),
-      transition('* => *',animate('500ms ease-in-out'))
+      transition('* => *',animate('500ms ease-in-out')),
     ])
   ],
   template: `
-   <img [@zoom]="state" (mouseenter)="setState(':leave')" (mouseleave)="setState(':enter')" class="w-full" [src]="src" alt="">
+   <img [@zoom]="state" (mouseenter)="setState('leave')" (mouseleave)="setState(':enter')" class="w-full" [src]="src" alt="">
   `,
   styles: ``
 })
 export class HouseComponent {
 
 @Input() src= "../../assets/img/office.jpg"
-state =':enter'
+state ='enter'
 
 setState(value:string){
   this.state=value

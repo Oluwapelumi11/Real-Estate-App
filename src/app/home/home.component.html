@@ -1,8 +1,8 @@
 <div class="w-full grid grid-cols-2">
-    <div class="">
+    <div class="h-screen">
         <div class="w-full mx-10 px-2 font-bold py-4 text-xl sticky top-0 bg-white"> WESTON</div>
-        <div class="mx-20 px-8 py-16">
-            <div class="flex  justify-center items-center  flex-col self-center  ">
+        <div class="mx-20 px-8 py-16 my-auto flex flex-col justify-center h-full">
+            <div class="flex  justify-center items-center  flex-col self-center   ">
                 <p class="capitalize text-5xl font-semibold">Trusted real estate property for you</p>
                 <p class="py-2 text-gray-500">Looking for your dream house or property. Search here and select your best one from more than 1 million listing</p>
             </div>
@@ -29,8 +29,8 @@
         </div>
     </div>
 
-    <div class="bg-transparent z-0">
-        <img src="../../assets/img/skyscraper.jpg" alt="">
+    <div class="bg-transparent z-0 h-screen">
+        <img class="w-full h-full" src="../../assets/img/skyscraper.jpg" alt="">
     </div>
 <!-- second section -->
 <div class="w-full col-span-full px-6 py-4 mx-14 ">
@@ -42,7 +42,7 @@
         @for (house of houses; track $index) {
         <div class="w-full relative overflow-hidden">
             <app-house [src]="house.url"/>
-            <p class="absolute bottom-0 bg-black bg-opacity-30 w-full">Living House</p>
+            <p class="absolute bottom-0 bg-black bg-opacity-30 py-3 px-6 text-xl text-center text-gray-50 w-full">{{house.desc}}</p>
         </div>
     }
        

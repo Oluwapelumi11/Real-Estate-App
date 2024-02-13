@@ -15,6 +15,14 @@ export class HomeComponent {
 
 
 
+
+
+
+
+
+
+  
+
   houses: any[] =[
     {
       url: "../../assets/img/skyscraper.jpg",
