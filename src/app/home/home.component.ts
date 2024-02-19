@@ -14,24 +14,13 @@ import { BlogComponent } from '../smallComponents/blog/blog.component';
 export class HomeComponent {
 
 
-
-
-
-
-
-
-
-
-
-  
-
   houses: any[] =[
     {
       url: "../../assets/img/skyscraper.jpg",
       desc: "Living House"
     },
     {
-      url: "../../assets/img/skyscraper.jpg",
+      url: "../../assets/img/skyscraper.jpg", 
       desc: "Living House"
     },
     {
@@ -42,6 +31,9 @@ export class HomeComponent {
       url: "../../assets/img/skyscraper.jpg",
       desc: "Living House"
     },
-
   ]
+
+  
+
+
 }

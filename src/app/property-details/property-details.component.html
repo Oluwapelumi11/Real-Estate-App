@@ -1,1 +1,152 @@
-<p>property-details works!</p>
+
+<div class="pt-24 px-4">
+
+<div>
+    <div class="border-b-[3px] my-3 w-full">
+        <p class="font-bold py-3">Overview</p>
+    </div>
+
+    <!-- picture div -->
+    <div class="grid grid-cols-2 h-[60vh] gap-2 mb-14">
+        <!-- main image div -->
+        <div class="w-full h-full overflow-auto scrollbar-hide ">
+            <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+        </div>
+        <!-- end of main image div -->
+        <!-- other imgs div -->
+        <div class="grid grid-cols-2 gap-2">
+            <div class="w-full overflow-auto scrollbar-hide h-full">
+                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+            </div>
+            <div class="w-full overflow-auto scrollbar-hide h-full">
+                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+            </div>
+            <div class="w-full overflow-auto scrollbar-hide h-full">
+                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+            </div>
+            <div class="w-full overflow-auto scrollbar-hide h-full">
+                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+            </div>
+        </div>
+        <!-- end of other imgs div -->
+    </div>
+    <!-- end of picture div -->
+<!--  house data div -->
+<div class="grid grid-cols-3 gap-x-10 pt-5 ">
+    <div class="col-span-2 ">
+        <div class="w-full">
+            <p class="text-2xl pt-4 font-semibold uppercase ">Iconic Meadow kane oceanfront</p>
+            <p class="text-sm py-2 text-gray-500">2040 Meadow Lane, Southampton Village, Southampton, NY 11968</p>
+            <p class="py-5 text-2xl font-semibold  ">$22,500,000</p>
+            
+        </div>
+        
+        <div class="grid grid-cols-2 w-full gap-8">
+            <div class="">
+                <div class="flex space-x-5">
+                    <p class="font-semibold">Est. Payment:</p>
+                    <p class="text-gray-700">$9,265.69/mo/mo</p>
+                </div>
+                <div class="flex space-x-1">
+                    <p class="font-semibold">Status:</p>
+                    <p class="text-gray-700">Active</p>
+                    <span class="">|</span>
+                    <p class="font-semibold">Days on site:</p>
+                    <p class="text-gray-700">5</p>                
+                </div>
+                <div class="w-full py-7">
+                    <p class="text-xl font-semibold uppercase py-3 ">House Description</p>
+                    <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatibus, odio quo repellendus magni blanditiis quos, tempore molestiae error ipsa maxime nisi iste recusandae qui! Dicta provident non natus perferendis.</p>
+                </div>
+            </div>
+            <div class="w-full">
+                <div class="flex space-x-2">
+                    <span class="text-center border-r border-gray-700 pr-3">
+                        <p class="text-3xl">4</p>
+                        <p>Bed</p>
+                    </span>
+                    
+                    <span class="text-center border-r border-gray-700 pr-3">
+                        <p class="text-3xl">2</p>
+                        <p>Bath</p>
+                    </span>
+                    
+                    <span class="text-center">
+                        <p class="text-3xl">1532</p>
+                        <p>Sqft</p>
+                    </span>
+                    
+                </div>
+                <div class="py-4">
+                    <p class="pt-3 font-semibold text-xl uppercase">Highlights</p>
+                    <div class="py-3">
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>Property Type</p>
+                            <p class="font-semibold">Residential</p>
+                        </span>
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>Lot/Acreage</p>
+                            <p class="font-semibold">0.2</p>
+                        </span>
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>Year Built</p>
+                            <p class="font-semibold">2022</p>
+                        </span>
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>Country</p>
+                            <p class="font-semibold">United States</p>
+                        </span>
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>Area</p>
+                            <p class="font-semibold">Southampton</p>
+                        </span>
+                        <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
+                            <p>MLS</p>
+                            <p class="font-semibold">32-123654</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- agent component div -->
+    <div class="">
+        <div class="w-full shadow-xl pb-8">
+            <p class="text-center font-semibold py-2 pb-5 ">
+                Schedule a Tour
+            </p>
+            <form class="w-full flex flex-col items-center space-y-4">
+                <input  class=" w-9/12   border border-gray-300 px-2 py-2" type="date" name="date" id="">
+                <div class="w-full flex flex-col items-center space-y-2">
+                    <input class="w-9/12 bg-gray-900 uppercase text-gray-100 py-2 text-sm border border-gray-300 px-2  " type="submit" name="submit" id="" value="In person tour">
+                    <input class="w-9/12  border border-gray-800 uppercase text-sm px-2 py-2 " type="submit" name="submit2" id="" value="virtual tour">
+                </div>
+            </form>
+
+        </div>
+        <div class="flex flex-col py-6 px-8">
+            <div class="flex space-x-4 items-center">
+                <div class="w-20 h-20">
+                    <img class="rounded-full w-full h-full" src="../../assets/img/fine-hpuse.jpg" alt="">
+                </div>
+                <div class="">
+                    <p class="font-semibold">John Smith</p>
+                    <a class="text-gray-400 border-b" href="">View agent profile</a>
+                </div>
+            </div>
+        
+            <div class="flex space-x-4 py-4">
+                <button class="border-2 py-1  border-gray-800 w-36">Email</button>
+                <button class="border-2 py-1  border-gray-800 w-36">Phone</button>
+            </div>
+        </div>
+    </div>
+    <!-- agent component div -->
+</div>
+<div>
+    fsdghsgd
+</div>
+<!--end of  house data div -->
+</div>
+
+</div>

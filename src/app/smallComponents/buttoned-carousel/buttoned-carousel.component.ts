@@ -1,28 +1,52 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NguCarousel, NguCarouselConfig,NguCarouselDefDirective,NguCarouselNextDirective,NguCarouselPrevDirective,NguCarouselStore, NguItemComponent, NguTileComponent } from '@ngu/carousel';
 
 @Component({
   selector: 'app-buttoned-carousel',
   standalone: true,
-  imports: [],
-  template: `
-  <div class="relative w-fit h-fit">
-    <img [src]="src" class="w-[100vw] h-[90vh]" />
-    <div class="flex w-36 justify-between px-4 mx-7 z-20 absolute bottom-5 right-3">
-      <button (click)="changeImage()" class="rounded-full border-2 border-white px-2 py-2 text-white">left</button>
-      <button (click)="changeImage()" class="rounded-full border-2 border-white px-2 py-2 text-white">right</button>
-    </div>
-  </div>
-  `,
-  styles: ``
-})
-export class ButtonedCarouselComponent {
-  @Input() src = "../../assets/img/house-pool.jpg"
+  imports: [
+    NguCarousel,
+  NguTileComponent,   
+  NguCarousel,
+  NguCarouselDefDirective,
+  NguCarouselNextDirective,
+  NguCarouselPrevDirective,
+  NguItemComponent,
 
-  srcList= ["../../assets/img/house-pool.jpg","../../assets/img/night-gouse.jpg","../../assets/img/skyscraper.jpg","../../assets/img/house-pool.jpg"]
-  f = this.srcList.length
-  selected = 0;
-changeImage(){
+  ],
+  template: `
+  <ngu-carousel [inputs]="carouselConfig">
+  @for (banner of src; track $index) {
+
+    <ngu-item >
+      <img [src]="banner" alt="">
+    </ngu-item>
+  }
+</ngu-carousel>
+`,
+styles: []
+})
+export class ButtonedCarouselComponent implements OnInit {
+  @Input() src = ["../../assets/img/house-pool.jpg","../../assets/img/night-gouse.jpg","../../assets/img/skyscraper.jpg","../../assets/img/house-pool.jpg"]
+  carouselConfig :any ={}
   
-}
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.carouselConfig= {
+     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
+     slide: 1,
+     speed: 400,
+     interval: { timing: 3000 },
+     point: {
+       visible: true
+     },
+     load: 2,
+     loop: true,
+     touch: true
+   };
+  }
+    
+  
 
 }
