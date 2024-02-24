@@ -143,8 +143,38 @@
     </div>
     <!-- agent component div -->
 </div>
-<div>
-    fsdghsgd
+<div class="grid grid-cols-3 space-x-3">
+    <div>
+        <p class="text-xl font-semibold py-4">Exterior Details</p>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Plot Size</span>: 0.7 acres</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Roof</span>: Partial Roof</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Construction</span>: Frame and wood construction</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Cooling</span>: Electric Air Cooling</li>
+    </div>
+    <div>
+        <p class="text-xl font-semibold py-4">Interior Details</p>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Interior Size</span>: 3000 sq.ft</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: 4</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: 3</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Garage</span>: 4 cars</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Laundry Room</span>: Washer/Dryer Hookups</li>
+    </div>
+    <div class=" px-8">
+        <p class="text-xl font-semibold py-4">Room Dimentions</p>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Living room</span>: 29 x 18</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: 23 x 16</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: 12 x 15</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Kitchen</span>: 23 x 16</li>
+    </div>
+</div>
+
+<div class="py-8">
+    <p class="text-2xl py-7 font-semibold text-center">Similar Listing</p>
+    <div class="grid grid-cols-3 gap-x-10">
+        @for (item of [1,2,3]; track $index) {
+            <app-property />
+        }
+    </div>
 </div>
 <!--end of  house data div -->
 </div>
