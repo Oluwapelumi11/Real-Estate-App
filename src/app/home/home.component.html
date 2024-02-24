@@ -1,10 +1,10 @@
 <div class="w-full grid grid-cols-2 bg-gray-100">
-    <div class="h-screen">
+    <div class="sm:h-screen md:col-span-1 col-span-2">
         <div class="w-full mx-10 px-2 font-bold py-4 text-xl sticky top-0 bg-gray-100"> WESTON</div>
-        <div class="mx-20 px-8 py-16 my-auto flex flex-col justify-center h-full">
-            <div class="flex  justify-center items-center  flex-col self-center   ">
-                <p class="capitalize text-5xl font-semibold">Trusted real estate property for you</p>
-                <p class="py-2 text-gray-500">Looking for your dream house or property. Search here and select your best one from more than 1 million listing</p>
+        <div class="sm:mx-20  py-16 my-auto flex flex-col justify-center h-full">
+            <div class="flex  justify-center items-center sm:text-left text-center  flex-col self-center   ">
+                <p class="capitalize sm:text-5xl text-2xl font-semibold">Trusted real estate property for you</p>
+                <p class="py-2 text-gray-500 sm:px-10 px-4 sm:px-0">Looking for your dream house or property. Search here and select your best one from more than 1 million listing</p>
             </div>
             <div class="flex flex-col space-y-5 my-4">
         </div>
@@ -12,35 +12,35 @@
                 <button class="bg-gray-900 text-gray-50 px-8 py-3">Discover Properties</button>
                 <button class="text-gray-900 bg-gray-50 px-8 py-3">Learn More</button>
             </div>
-            <div class="flex bg-white text-gray-900 shadow-md p-5 text-center">
+            <div class="flex bg-white text-gray-900 mx-2 sm:mx-0 shadow-md p-5 text-center">
                 <div class="flex-1 mx-2" >
-                    <p class="font-bold text-xl">35+</p>
-                    <p class="font-semibold text-gray-800 uppercase whitespace-nowrap">Years in business</p>
+                    <p class="font-bold  sm:text-lg">35+</p>
+                    <p class="font-semibold text-gray-800 text-xs sm:text-sm uppercase whitespace-nowrap">Years in business</p>
                 </div>
                 <div class="flex-1 mx-2" >
-                    <p class="font-bold text-xl">200+M</p>
-                    <p class="font-semibold text-gray-800 uppercase whitespace-nowrap">Deal in the past 12 months</p>
+                    <p class="font-bold  sm:text-lg">200+M</p>
+                    <p class="font-semibold text-gray-800 text-xs sm:text-sm uppercase whitespace-nowrap">Deal in the past 12 months</p>
                 </div>
                 <div class="flex-1 mx-2" >
-                    <p class="font-bold text-xl">$1B+</p>
-                    <p class="font-semibold text-gray-800 uppercase whitespace-nowrap">in total sales</p>
+                    <p class="font-bold  sm:text-lg">$1B+</p>
+                    <p class="font-semibold text-gray-800 text-xs sm:text-sm uppercase whitespace-nowrap">in total sales</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-transparent z-0 h-screen">
+    <div class="bg-transparent z-0 sm:h-screen col-span-2 sm:col-span-1">
         <img class="w-full h-full" src="../../assets/img/skyscraper.jpg" alt="">
     </div>
 <!-- second section -->
 <div class="w-full col-span-full py-7 px-14 ">
     <div class="text-center px-4 py-6 flex flex-col items-center">
-        <p class="text-2xl text-gray-800 uppercase font-semibold">What area are you looking for</p>
-        <p class="text-gray-400 w-4/5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur molestiae repellat facere doloribus minus ut hic corrupti officiis totam, perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+        <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">What area are you looking for</p>
+        <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur molestiae repellat facere doloribus minus ut hic corrupti officiis totam, perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
     </div>
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-4 sm:gap-4 gap-y-5 gap-x-2">
         @for (house of houses; track $index) {
-        <div class="w-full relative overflow-hidden">
+        <div class="w-full col-span-full sm:col-span-1 relative overflow-hidden">
             <app-house [src]="house.url"/>
             <p class="absolute bottom-0 bg-black bg-opacity-30 py-3 px-6 text-xl text-center text-gray-50 w-full">{{house.desc}}</p>
         </div>
@@ -55,12 +55,12 @@
 <!-- third section -->
     <div class="w-full px-14 py-7 col-span-full">
         <div class="text-center px-4 py-6 flex flex-col items-center">
-            <p class="text-2xl text-gray-800 uppercase font-semibold">Who we are</p>
-            <p class="text-gray-400 w-4/5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur molestiae repellat facere doloribus minus ut hic corrupti officiis totam, perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+            <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">Who we are</p>
+            <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur molestiae repellat facere doloribus minus ut hic corrupti officiis totam, perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
         </div>
         <div class="grid grid-cols-9 gap-8 ">
-            <div class="col-span-5 w-full px-4 flex flex-col space-y-5 justify-center">
-            <p class="text-2xl text-gray-800 uppercase font-semibold ">Meet the Weston Real Estate</p>
+            <div class="sm:col-span-5 col-span-full sm:text-base text-sm w-full px-4 flex flex-col space-y-5 justify-center">
+            <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold ">Meet the Weston Real Estate</p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quasi illo pariatur hic magnam omnis voluptatem dolorum doloribus accusamus cupiditate ipsam voluptate ex velit nisi consequuntur, id ab sint in.
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi consequatur, enim rerum tempora soluta delectus, ea officiis iste modi iure, eius laborum ducimus esse? Obcaecati inventore facilis id voluptates modi.
@@ -75,7 +75,7 @@
                 <button class="text-gray-900 bg-white px-8 py-3 border-2">Learn More</button>
                 </div>
             </div>
-            <div class="w-full col-span-4">
+            <div class="w-full sm:col-span-4 col-span-full">
                 <img src="../../assets/img/night-gouse.jpg" alt=""/>
             </div>
         </div>
@@ -85,8 +85,8 @@
 <!-- fourth section -->
 <div class="w-full col-span-full py-5">
     <div class="text-center px-4 py-6 flex flex-col items-center">
-        <p class="text-2xl text-gray-800 uppercase font-semibold">Exclusive listings</p>
-        <p class="text-gray-400 w-4/5 text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+        <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">Exclusive listings</p>
+        <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
     </div>
     <div class="w-full h-full ">
         dfjbf
@@ -97,12 +97,12 @@
 <!-- fifth section -->
 <div class="w-full col-span-full py-7">
     <div class="text-center px-4 py-6 flex flex-col items-center">
-        <p class="text-2xl text-gray-800 uppercase font-semibold">Area of expertise</p>
-        <p class="text-gray-400 w-4/5 text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+        <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">Area of expertise</p>
+        <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
     </div>
-    <div class="grid grid-cols-3 h-[90vh] ">
-        @for (item of [1,2,3,4,5,6,7,8,9]; track $index) {
-            <div class="relative w-full overflow-hidden rounded-md">
+    <div class="grid grid-cols-3 sm:h-[90vh] ">
+        @for (item of [1,2,3,4,5,6]; track $index) {
+            <div class="relative w-full col-span-full sm:col-span-1 sm:gap-0 gap-4 overflow-hidden rounded-md">
                 <app-house [src]="'../../assets/img/apart.jpg'" />
                 <div class="flex justify-center items-center bg-black text-2xl font-bold bg-opacity-10 absolute top-0 h-full w-full text-white">Greenville</div>
             </div>
@@ -112,17 +112,17 @@
 <!-- end of fifth section -->
 
 <!-- sixth sevction -->
-<div class="py-7 px-10 col-span-full ">
+<div class="py-7 sm:px-10 px-4 col-span-full ">
     <div class="text-center px-4 py-6 flex flex-col items-center">
-        <p class="text-2xl text-gray-800 uppercase font-semibold">What our Client says</p>
-        <p class="text-gray-400 w-4/5 text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+        <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">What our Client says</p>
+        <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
     </div>
 
-    <div class="grid grid-cols-5 gap-20 mx-14 py-14 px-10 bg-white">
-        <div class="col-span-2 ">
+    <div class="grid grid-cols-5 gap-20 mx-14 py-14 sm:px-10 px-4 bg-white">
+        <div class="sm:col-span-2 col-span-full ">
             <img src="../../assets/img/house-pool2.jpg" alt="">
         </div>
-        <div class="flex flex-col justify-center col-span-3">
+        <div class="flex flex-col justify-center sm:col-span-3 col-span-full">
             <p class="w-4/5 py-4 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, soluta! Voluptatibus id cum animi eligendi culpa soluta voluptatem aut, dignissimos dolores velit accusantium! Ea quibusdam laboriosam, ipsa beatae commodi deserunt!</p>
             <p class="w-4/5 py-1 font-bold">ST JOHN</p>
             <p class="w-4/5 py-1 ">London</p>
@@ -132,20 +132,43 @@
     <!-- end sixth sevction -->
 
     <!-- seventh section  -->
-    <div class=" col-span-full w-full py-7">
+    <div class=" col-span-full w-full py-7  ">
             <div class="text-center px-4 py-6 flex flex-col items-center bg-gray-50">
-                <p class="text-2xl text-gray-800 uppercase font-semibold">Our Blogs</p>
-                <p class="text-gray-400 w-4/5 text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
+                <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">Our Blogs</p>
+                <p class="text-gray-400 w-4/5 sm:text-base text-sm text-center">Lorem adipisicing elit.  facere doloribus  perspiciatis sunt dolor molestias minima iure, corporis ad neque iste!</p>
             </div>
-            <div class="grid grid-cols-3 gap-6 px-14">
-                
+            <div class="sm:grid sm:grid-cols-3 hidden gap-6 px-14">
+               @for (item of [1,2,3]; track $index) {
+                <app-blog />
+               }
+               
             </div>
+           
     </div>
     <!--end of seventh section  -->
 
     <!-- eight sections -->
-    <div class="col-span-full w-full ">
-            
+    <div id="contact" class="col-span-full w-full hidden h-[80vh] bg-gray-500 sm:flex justify-center items-center">
+            <div class="w-[80%] h-[80%] grid grid-cols-9 gap-6  px-8 py-5">
+                <div class="sm:col-span-5 col-span-full flex flex-col justify-center items-center">
+                    <div class="text-left">
+                        <p class="font-semibold text-white text-xl py-4">We help you buy or sell property quickly</p>
+                        <p class="text-gray-300 text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum animi id dicta quidem! Dolores minus blanditiis magni quod eius! Architecto ad, quisquam deleniti temporibus facere ipsum illum rerum excepturi error? We help you buy or sell property quickly</p>
+                    </div>
+                    
+                </div>
+
+                <div class="sm:col-span-4 col-span-full w-full flex flex-col justify-center items-center h-full">
+                    <form class="bg-black bg-opacity-80 flex flex-col justify-center w-[80%]  items-center py-14 px-5 space-y-4">
+                        <input type="text" name="" class="w-[85%] text-sm px-2 py-1 border-none focus:border-none focus:outline-none bg-gray-500 text-white"  placeholder="Full Name">
+                        <input type="text" name="" class="w-[85%] text-sm px-2 py-1 border-none focus:border-none focus:outline-none bg-gray-500 text-white"  placeholder="Your Email">
+                        <input type="text" name="" class="w-[85%] text-sm px-2 py-1 border-none focus:border-none focus:outline-none bg-gray-500 text-white"  placeholder="Subject">
+                        <textarea name="" id="" class="w-[85%] text-sm px-2 py-1 text-white border-none bg-gray-500 focus:border-none focus:outline-none " placeholder="Message"></textarea>
+
+                        <input type="submit" value="SUBMIT" class="text-white my-4 border px-4 py-2 text-sm w-[85%] border-white" name="" id="">
+                    </form>
+                </div>
+            </div>
     </div>
     <!-- end of eight sections -->
 </div>
