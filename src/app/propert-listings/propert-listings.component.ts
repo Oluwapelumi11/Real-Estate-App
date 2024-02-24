@@ -13,15 +13,19 @@ import { Observable } from 'rxjs';
   templateUrl: './propert-listings.component.html',
   styleUrl: './propert-listings.component.css'
 })
-export class PropertListingsComponent  {
-  houseService = inject(HouseService)
+export class PropertListingsComponent implements OnInit  {
+ 
   property: Property[] = []
-  property$ = Observable<any>; 
 
-  ngOninit(){
-    this.houseService.getallProperties().subscribe((properties:Property[]) => {
-      this.property = properties
-    })
+  constructor(private propertyService: HouseService){}
+
+
+  ngOnInit(){
+    this.propertyService.getallProperties();
+    this.propertyService.property$.subscribe((result) => {
+      this.property = result
+  
+    }) 
   }
 
   

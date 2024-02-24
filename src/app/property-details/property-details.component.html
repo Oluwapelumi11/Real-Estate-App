@@ -1,11 +1,12 @@
 
 <div class="pt-24 px-4">
+@if (property) {
 
-<div>
-    <div class="border-b-[3px] my-3 w-full">
-        <p class="font-bold py-3">Overview</p>
+    <div>
+        <div class="border-b-[3px] my-3 w-full">
+            <p class="font-bold py-3">Overview</p>
     </div>
-
+    
     <!-- picture div -->
     <div class="grid grid-cols-2 h-[60vh] gap-2 mb-14">
         <!-- main image div -->
@@ -16,16 +17,16 @@
         <!-- other imgs div -->
         <div class="grid grid-cols-2 gap-2">
             <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+                <app-house [src]="property.images[0].image" />
             </div>
             <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+                <app-house [src]="property.images[0].image" />
             </div>
             <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+                <app-house [src]="property.images[0].image" />
             </div>
             <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+                <app-house [src]="property.images[0].image" />
             </div>
         </div>
         <!-- end of other imgs div -->
@@ -35,9 +36,9 @@
 <div class="grid grid-cols-3 gap-x-10 pt-5 ">
     <div class="col-span-2 ">
         <div class="w-full">
-            <p class="text-2xl pt-4 font-semibold uppercase ">Iconic Meadow kane oceanfront</p>
-            <p class="text-sm py-2 text-gray-500">2040 Meadow Lane, Southampton Village, Southampton, NY 11968</p>
-            <p class="py-5 text-2xl font-semibold  ">$22,500,000</p>
+            <p class="text-2xl pt-4 font-semibold uppercase ">{{property.title}}</p>
+            <p class="text-sm py-2 text-gray-500">{{property.street}} {{property.city}} {{property.zip_code}}</p>
+            <p class="py-5 text-2xl font-semibold  ">&#x20a6;{{property.price | number:'1.2-2'}}</p>
             
         </div>
         
@@ -45,34 +46,34 @@
             <div class="">
                 <div class="flex space-x-5">
                     <p class="font-semibold">Est. Payment:</p>
-                    <p class="text-gray-700">$9,265.69/mo/mo</p>
+                    <p class="text-gray-700">&#x20a6;9,265.69/mo/mo</p>
                 </div>
                 <div class="flex space-x-1">
                     <p class="font-semibold">Status:</p>
-                    <p class="text-gray-700">Active</p>
+                    <p class="text-gray-700">{{property.status}}</p>
                     <span class="">|</span>
                     <p class="font-semibold">Days on site:</p>
-                    <p class="text-gray-700">5</p>                
+                    <p class="text-gray-700">{{property.days_on_site}}</p>                
                 </div>
                 <div class="w-full py-7">
                     <p class="text-xl font-semibold uppercase py-3 ">House Description</p>
-                    <p class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis voluptatibus, odio quo repellendus magni blanditiis quos, tempore molestiae error ipsa maxime nisi iste recusandae qui! Dicta provident non natus perferendis.</p>
+                    <p class="text-gray-700">{{property.description}}</p>
                 </div>
             </div>
             <div class="w-full">
                 <div class="flex space-x-2">
                     <span class="text-center border-r border-gray-700 pr-3">
-                        <p class="text-3xl">4</p>
+                        <p class="text-3xl">{{property.bedroom}}</p>
                         <p>Bed</p>
                     </span>
                     
                     <span class="text-center border-r border-gray-700 pr-3">
-                        <p class="text-3xl">2</p>
+                        <p class="text-3xl">{{property.bathroom}}</p>
                         <p>Bath</p>
                     </span>
                     
                     <span class="text-center">
-                        <p class="text-3xl">1532</p>
+                        <p class="text-3xl">{{property.interior_size}}</p>
                         <p>Sqft</p>
                     </span>
                     
@@ -82,7 +83,7 @@
                     <div class="py-3">
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>Property Type</p>
-                            <p class="font-semibold">Residential</p>
+                            <p class="font-semibold">{{property.property_type}}</p>
                         </span>
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>Lot/Acreage</p>
@@ -90,15 +91,15 @@
                         </span>
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>Year Built</p>
-                            <p class="font-semibold">2022</p>
+                            <p class="font-semibold">2012</p>
                         </span>
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>Country</p>
-                            <p class="font-semibold">United States</p>
+                            <p class="font-semibold">Nigeria</p>
                         </span>
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>Area</p>
-                            <p class="font-semibold">Southampton</p>
+                            <p class="font-semibold">{{property.city}}</p>
                         </span>
                         <span class="flex justify-between py-1 border-b pb-1 border-gray-400">
                             <p>MLS</p>
@@ -146,25 +147,25 @@
 <div class="grid grid-cols-3 space-x-3">
     <div>
         <p class="text-xl font-semibold py-4">Exterior Details</p>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Plot Size</span>: 0.7 acres</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Roof</span>: Partial Roof</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Construction</span>: Frame and wood construction</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Cooling</span>: Electric Air Cooling</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Plot Size</span>: {{property.plot_size}} acres</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Roof</span>: {{property.roof_type}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Construction</span>: {{property.construction_company}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Cooling</span>: {{property.cooling}}</li>
     </div>
     <div>
         <p class="text-xl font-semibold py-4">Interior Details</p>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Interior Size</span>: 3000 sq.ft</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: 4</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: 3</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Garage</span>: 4 cars</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Laundry Room</span>: Washer/Dryer Hookups</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Interior Size</span>: {{property.interior_size}} sq.ft</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: {{property.bedroom}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: {{property.bathroom}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Garage</span>: {{property.garage}} cars</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Laundry Room</span>: {{property.laundry_room_equipment}}</li>
     </div>
     <div class=" px-8">
         <p class="text-xl font-semibold py-4">Room Dimentions</p>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Living room</span>: 29 x 18</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: 23 x 16</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: 12 x 15</li>
-        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Kitchen</span>: 23 x 16</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Living room</span>: {{property.living_room_size}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: {{property.bathroom_size}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bathroom</span>: {{property.bathroom_size}}</li>
+        <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Kitchen</span>: {{property.kitchen}}</li>
     </div>
 </div>
 
@@ -179,4 +180,5 @@
 <!--end of  house data div -->
 </div>
 
+}
 </div>

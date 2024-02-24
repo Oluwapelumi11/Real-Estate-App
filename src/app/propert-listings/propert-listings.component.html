@@ -17,7 +17,7 @@
 <!-- second section -->
 <div class="col-span-full mt-5">
     <p class="uppercase text-2xl text-center py-10 mt-6 font-semibold">LIST of properties</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi commodi, itaque corporis eveniet temporibus sint mollitia exercitationem. Labore officiis commodi vero, cumque doloremque quasi aliquid quaerat voluptate voluptates quia cupiditate.</p>
+    <p>Welcome to our curated selection of exquisite properties, each offering a unique blend of luxury, comfort, and style. Whether you're seeking a cozy suburban retreat, a sleek urban apartment, or a sprawling countryside estate, we have something to suit every lifestyle and preference. Browse through our listings below to discover your dream home today</p>
     <div class="flex space-x-10 justify-center py-5">
         <a class="bg-gray-900 text-gray-50 hover:bg-gray-900 hover:text-gray-50 hover:border-none transition-all duration-300 py-2 px-4">Living House</a>
         <a class="border border-gray-400 hover:bg-gray-900 hover:text-gray-50 hover:border-none transition-all duration-300 px-4 py-2 text-gray-500">House Villa</a>
@@ -33,9 +33,9 @@
     </div>
     <div class="grid grid-cols-3 gap-10">
         
-        @for (item of [1,1,1,1,1,1,1,1,1]; track $index) {
+        @for (p of property; track $index) {
             <div class="w-full h-[400px] overflow-hidden">
-                <app-property />
+                <app-property [property]="p" />
             </div>
             }
     </div>

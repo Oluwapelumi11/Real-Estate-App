@@ -21,6 +21,10 @@ export const routes: Routes = [
         component: PropertListingsComponent
     },
     {
+        path: 'properties/:id',
+        component: PropertyDetailsComponent
+    },
+    {
         path: 'contact',
         component: ContactComponent
     },
