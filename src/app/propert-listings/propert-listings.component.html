@@ -34,7 +34,7 @@
     <div class="grid grid-cols-3 gap-10">
         
         @for (p of property; track $index) {
-            <div class="w-full h-[400px] overflow-hidden">
+            <div class="w-full sm:h-[400px] sm:col-span-1 col-span-full overflow-hidden">
                 <app-property [property]="p" />
             </div>
             }

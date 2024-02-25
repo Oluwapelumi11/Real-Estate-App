@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       <div class="grid grid-cols-11 gap-8">
         <div class="text-left sm:col-span-2 col-span-full">
           <p class="text-xl font-bold uppercase py-5">WESTON</p>
-          <p class="text-xs">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque</p>
+          <p class="text-xs">Discover premier real estate services with Weston – your trusted partner in finding your dream home.</p>
         </div>
         
         <div class="text-left sm:col-span-5 py-5 col-span-full">
@@ -30,12 +30,12 @@ import { Component } from '@angular/core';
           <p class="font-semibold uppercase text-sm py-5">Contact us</p>
           <p class="text-xs py-1">+234 81 2345 6782</p>
           <p class=" py-1 text-xs" ><a href="mailto:contact@weston.com " class="underline">Email Us</a></p>
-          <p class="text-xs">Lorem, ipsum dolor sit amet consectetur eaque ab quibusdam </p>
+          <p class="text-xs">Reach out to us today for personalized assistance with all your real estate needs.</p>
         </div>
 
         <div class="sm:col-span-2 col-span-4 ">
           <p class="font-semibold uppercase text-sm py-5">Follow us</p>
-          <div class="flex gap-x-5">
+          <div class="flex gap-5 flex-wrap flex-1 ">
             <a href=""><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_1_366)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.067C0 18.033 4.333 22.994 10 24V15.333H7V12H10V9.333C10 6.333 11.933 4.667 14.667 4.667C15.533 4.667 16.467 4.8 17.333 4.933V8H15.8C14.333 8 14 8.733 14 9.667V12H17.2L16.667 15.333H14V24C19.667 22.994 24 18.034 24 12.067C24 5.43 18.6 0 12 0C5.4 0 0 5.43 0 12.067Z" fill="white"/>
