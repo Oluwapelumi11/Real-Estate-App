@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
         
         <div class="text-left sm:col-span-5 py-5 col-span-full">
           <p>For exclusive news and market updates sign up for our newsletter.</p>
-          <div class="flex w-full space-x-5 py-3">
+          <div class="flex w-full sm:space-x-5 sm:space-y-0 space-y-5 py-3  flex-wrap sm:flex-nowrap">
             <div class="flex flex-1 bg-white text-gray-600">
               <svg width="35" class="ml-1" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.06755 6C7.92531 6 6.82986 6.42143 6.02218 7.17157C5.21449 7.92172 4.76074 8.93913 4.76074 10V10.402L17.6812 16.864L30.6016 10.404V10C30.6016 8.93913 30.1478 7.92172 29.3401 7.17157C28.5324 6.42143 27.437 6 26.2948 6H9.06755ZM30.6016 12.674L18.1915 18.88C18.0347 18.9584 17.8593 18.9995 17.6812 18.9995C17.503 18.9995 17.3277 18.9584 17.1708 18.88L4.76074 12.674V22C4.76074 23.0609 5.21449 24.0783 6.02218 24.8284C6.82986 25.5786 7.92531 26 9.06755 26H26.2948C27.437 26 28.5324 25.5786 29.3401 24.8284C30.1478 24.0783 30.6016 23.0609 30.6016 22V12.674Z" fill="#333333"/>
@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
                 
               <input type="email" required class="border-none focus:outline-none flex-1 px-5 text-sm" placeholder="Enter Your Email Address">
             </div>
-            <button class="border border-white py-1 px-4">SUBMIT</button>
+            <button class="border border-white py-1 px-4 w-full sm:w-fit">SUBMIT</button>
           </div>
         </div>
 
