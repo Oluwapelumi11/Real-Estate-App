@@ -1,7 +1,16 @@
-<div  class="w-full text-end"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <div  class="w-full text-end"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4 11H16V13H4V11ZM4 6H20V8H4V6ZM4 18H11.235V16H4V18Z" fill="black"/>
     </svg>
-    </div>
-<app-navbar />
+    </div> -->
+
+<nav class="flex justify-end px-20">
+    <ul class="flex space-x-10">
+        <app-navbar route="" name="Home"  />
+        <app-navbar route="about" name="About"/>
+        <app-navbar route="Properties" name="Properties" />
+        <app-navbar (click)="scrollTo('contact')"  name="Contact" ></app-navbar>
+    </ul>
+
+</nav>
 <router-outlet ></router-outlet>
 <app-footer />

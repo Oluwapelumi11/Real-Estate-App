@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './smallComponents/navbar/navbar.component';
 import { FooterComponent } from './smallComponents/footer/footer.component';
 
@@ -12,5 +12,14 @@ import { FooterComponent } from './smallComponents/footer/footer.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Real-Estate-App';
+  title = 'Weston Real Estate';
+
+
+
+  constructor(private route:Router){}
+  scrollTo(divId: string){
+    this.route.navigateByUrl(`#${divId}`)
+    
+  }
+  
 }
