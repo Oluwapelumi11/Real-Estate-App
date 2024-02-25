@@ -24,6 +24,7 @@ export class MemberComponent {
     name : "John Doe",
     phone : "+1234567890",
     image : "agent1.jpg",
+    email:"oluwapelumiezekiel1@gmail.com",
     facebook : "https://www.facebook.com/johndoe",
     x : "x123456789",
     whatsapp : "+1234567890"
