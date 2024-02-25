@@ -8,13 +8,11 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet,RouterModule],
   animations: [trigger('showunderline',[
+    state('end',style({
+      borderBottom: '0px solid black',
+    })),
     state('start',style({
       borderBottom: '1px solid black',
-      borderOpacity: '0%'
-    })),
-    state('end',style({
-      transform: '1px solid black',
-      borderOpacity: '100%',
       
     })),
     transition('* => end',animate('300ms ease-in-out')),

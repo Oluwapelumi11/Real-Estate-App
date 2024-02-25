@@ -4,46 +4,39 @@
 
     <div>
         <div class="border-b-[3px] my-3 w-full">
-            <p class="font-bold py-3">Overview</p>
+            <p class="font-bold py-3 sm:text-2xl text-xl">Overview</p>
     </div>
     
     <!-- picture div -->
     <div class="grid grid-cols-2 h-[60vh] gap-2 mb-14">
         <!-- main image div -->
-        <div class="w-full h-full overflow-auto scrollbar-hide ">
-            <app-house [src]="'../../assets/img/house-pool-3.jpg'" />
+        <div class="w-full h-full col-span-full sm:col-span-1 overflow-auto scrollbar-hide ">
+            <img [src]="selectedImage || property.images[0]?.image" class="w-full h-full" alt="">
         </div>
         <!-- end of main image div -->
         <!-- other imgs div -->
-        <div class="grid grid-cols-2 gap-2">
-            <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="property.images[0].image" />
-            </div>
-            <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="property.images[0].image" />
-            </div>
-            <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="property.images[0].image" />
-            </div>
-            <div class="w-full overflow-auto scrollbar-hide h-full">
-                <app-house [src]="property.images[0].image" />
-            </div>
+        <div class="sm:col-span-1 col-span-full grid grid-cols-2 gap-2">
+            @for (image of property.images.slice(1,5); track $index) {
+                <div (click)="selectImage($index+1)" class="w-full overflow-auto scrollbar-hide h-full">
+                    <img src="{{image.image}}" class="w-full h-full" alt="">       
+                </div>
+            }
         </div>
         <!-- end of other imgs div -->
     </div>
     <!-- end of picture div -->
 <!--  house data div -->
-<div class="grid grid-cols-3 gap-x-10 pt-5 ">
-    <div class="col-span-2 ">
+<div class="grid  grid-cols-3 gap-x-10 pt-5 ">
+    <div class="sm:col-span-2 col-span-full ">
         <div class="w-full">
-            <p class="text-2xl pt-4 font-semibold uppercase ">{{property.title}}</p>
+            <p class="sm:text-2xl text-xl pt-4 font-semibold uppercase ">{{property.title}}</p>
             <p class="text-sm py-2 text-gray-500">{{property.street}} {{property.city}} {{property.zip_code}}</p>
             <p class="py-5 text-2xl font-semibold  ">&#x20a6;{{property.price | number:'1.2-2'}}</p>
             
         </div>
         
         <div class="grid grid-cols-2 w-full gap-8">
-            <div class="">
+            <div class="sm:col-span-1 col-span-full">
                 <div class="flex space-x-5">
                     <p class="font-semibold">Est. Payment:</p>
                     <p class="text-gray-700">&#x20a6;9,265.69/mo/mo</p>
@@ -60,7 +53,7 @@
                     <p class="text-gray-700">{{property.description}}</p>
                 </div>
             </div>
-            <div class="w-full">
+            <div class="w-full sm:col-span-1 col-span-full">
                 <div class="flex space-x-2">
                     <span class="text-center border-r border-gray-700 pr-3">
                         <p class="text-3xl">{{property.bedroom}}</p>
@@ -111,7 +104,7 @@
         </div>
     </div>
     <!-- agent component div -->
-    <div class="">
+    <div class="sm:col-span-1 col-span-full">
         <div class="w-full shadow-xl pb-8">
             <p class="text-center font-semibold py-2 pb-5 ">
                 Schedule a Tour
@@ -128,23 +121,23 @@
         <div class="flex flex-col py-6 px-8">
             <div class="flex space-x-4 items-center">
                 <div class="w-20 h-20">
-                    <img class="rounded-full w-full h-full" src="../../assets/img/fine-hpuse.jpg" alt="">
+                    <img class="rounded-full w-full h-full" [src]="agent?.image" alt="">
                 </div>
                 <div class="">
-                    <p class="font-semibold">John Smith</p>
-                    <a class="text-gray-400 border-b" href="">View agent profile</a>
+                    <p class="font-semibold">{{agent?.name}}</p>
+                    <a class="text-gray-400 border-b" [href]="agent?.facebook">View agent profile</a>
                 </div>
             </div>
         
             <div class="flex space-x-4 py-4">
-                <button class="border-2 py-1  border-gray-800 w-36">Email</button>
-                <button class="border-2 py-1  border-gray-800 w-36">Phone</button>
+                <a [href]="agent?.whatsapp" class="border-2 py-1 text-center leading-5  border-gray-800 w-36">Email</a>
+                <a [href]="'tel:'+agent?.phone" class="border-2 py-1 text-center leading-5  border-gray-800 w-36">Phone</a>
             </div>
         </div>
     </div>
     <!-- agent component div -->
 </div>
-<div class="grid grid-cols-3 space-x-3">
+<div class="grid sm:grid-cols-3 grid-cols-1 space-x-3">
     <div>
         <p class="text-xl font-semibold py-4">Exterior Details</p>
         <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Plot Size</span>: {{property.plot_size}} acres</li>
@@ -160,7 +153,7 @@
         <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Garage</span>: {{property.garage}} cars</li>
         <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Laundry Room</span>: {{property.laundry_room_equipment}}</li>
     </div>
-    <div class=" px-8">
+    <div class=" sm:px-8">
         <p class="text-xl font-semibold py-4">Room Dimentions</p>
         <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Living room</span>: {{property.living_room_size}}</li>
         <li class="text-gray-400 font-semibold capitalize"><span class="text-gray-900 px-1 py-2">Bedroom</span>: {{property.bathroom_size}}</li>
@@ -171,9 +164,9 @@
 
 <div class="py-8">
     <p class="text-2xl py-7 font-semibold text-center">Similar Listing</p>
-    <div class="grid grid-cols-3 gap-x-10">
+    <div class="grid sm:grid-cols-3 grid-cols-1 gap-x-10">
         @for (item of [1,2,3]; track $index) {
-            <app-property />
+            <app-property  />
         }
     </div>
 </div>

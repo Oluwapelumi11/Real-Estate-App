@@ -3,14 +3,51 @@
     </svg>
     </div> -->
 
-<nav class="flex justify-end px-20">
+<nav class="sm:flex justify-end px-20 hidden fixed right-4 z-10">
     <ul class="flex space-x-10">
         <app-navbar route="" name="Home"  />
         <app-navbar route="about" name="About"/>
-        <app-navbar route="Properties" name="Properties" />
-        <app-navbar (click)="scrollTo('contact')"  name="Contact" ></app-navbar>
+        <app-navbar route="properties" name="Properties" />
+        <app-navbar route="/" (click)="scrollTo('contact')"  name="Contact" ></app-navbar>
     </ul>
 
 </nav>
+@if (navShown) {
+
+    <div class="bg-white w-screen h-screen fixed z-40 flex flex-col ">
+        <div class="w-full flex justify-end px-4 py-4">
+            <button (click)="showNav()" class=""><svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_949)">
+        <path d="M12.9401 11.9999L17.8001 7.13993C17.9094 7.0124 17.9664 6.84835 17.96 6.68056C17.9535 6.51278 17.8839 6.35362 17.7652 6.23489C17.6465 6.11616 17.4873 6.0466 17.3195 6.04012C17.1517 6.03364 16.9877 6.09071 16.8601 6.19993L12.0001 11.0599L7.14015 6.19326C7.01261 6.08405 6.84856 6.02698 6.68078 6.03346C6.51299 6.03994 6.35383 6.10949 6.2351 6.22822C6.11637 6.34695 6.04682 6.50611 6.04034 6.67389C6.03386 6.84168 6.09093 7.00573 6.20015 7.13326L11.0601 11.9999L6.19348 16.8599C6.12369 16.9197 6.06701 16.9932 6.02699 17.076C5.98698 17.1587 5.96449 17.2487 5.96095 17.3406C5.9574 17.4324 5.97287 17.5239 6.00639 17.6095C6.0399 17.695 6.09074 17.7727 6.15571 17.8377C6.22068 17.9027 6.29838 17.9535 6.38393 17.987C6.46948 18.0205 6.56103 18.036 6.65285 18.0325C6.74466 18.0289 6.83475 18.0064 6.91746 17.9664C7.00017 17.9264 7.07371 17.8697 7.13348 17.7999L12.0001 12.9399L16.8601 17.7999C16.9877 17.9091 17.1517 17.9662 17.3195 17.9597C17.4873 17.9533 17.6465 17.8837 17.7652 17.765C17.8839 17.6462 17.9535 17.4871 17.96 17.3193C17.9664 17.1515 17.9094 16.9875 17.8001 16.8599L12.9401 11.9999Z" fill="black"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1_949">
+        <rect width="24" height="24" fill="white"/>
+    </clipPath>
+</defs>
+</svg>
+</button>
+</div>
+        <div class="flex justify-center items-center h-full w-full">
+
+            <nav class="mx-20 py-10 flex flex-col items-center  justify-center  h-[50%] flex-1 w-full">
+                <ul class="w-full h-full ">
+            <li  class="border-b py-3 text-center px-5 border-black flex-1">
+                <app-navbar (click)="showNav()" />
+            </li>
+            <li  class="border-b py-3 text-center px-5 border-black flex-1">
+                <app-navbar (click)="showNav()" route="about" name="About" />
+            </li>
+            <li  class="border-b py-3 text-center px-5 border-black flex-1">
+                <app-navbar (click)="showNav()" route="properties" name="Properties" />
+            </li>
+            <li  class="border-b py-3 text-center px-5 border-black flex-1">
+                <app-navbar (click)="showNav()" route="contact" name="Contact" />
+            </li>            
+        </ul>
+    </nav>
+</div>
+</div>
+}
 <router-outlet ></router-outlet>
 <app-footer />

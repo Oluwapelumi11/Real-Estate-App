@@ -14,7 +14,7 @@ import { FooterComponent } from './smallComponents/footer/footer.component';
 export class AppComponent {
   title = 'Weston Real Estate';
 
-
+  navShown: boolean = false;
 
   constructor(private route:Router){}
   scrollTo(divId: string){
@@ -22,4 +22,9 @@ export class AppComponent {
     
   }
   
+
+
+  showNav() {
+this.navShown = !this.navShown;
+  }
 }

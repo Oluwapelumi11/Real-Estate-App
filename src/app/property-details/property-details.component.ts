@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HouseComponent } from '../smallComponents/house/house.component';
 import { PropertyComponent } from '../smallComponents/property/property.component';
 import { Property } from '../house';
 import { HouseService } from '../house.service';
 import { DecimalPipe } from '@angular/common';
+import { AgentService } from '../agent.service';
+import { Agent } from '../agent';
 
 @Component({
   selector: 'app-property-details',
@@ -48,12 +50,36 @@ export class PropertyDetailsComponent {
     owner : 123,
     days_on_site : 30
 } 
-  constructor(private route: ActivatedRoute, private propertyService: HouseService) { }
-
+agent : Agent |undefined;
+  constructor(private route: ActivatedRoute, private propertyService: HouseService, private agentService: AgentService) { }
+  selectedImage: string | undefined;
   ngOnInit() {
-  this.route.paramMap.subscribe(params => {
+   this.route.paramMap.subscribe(params => {
     const propertyId = Number(params.get('id'));
-    this.property = this.propertyService.getPropertyById(propertyId);
+    this.propertyService.getallProperties();// will remove this later to test
+    this.propertyService.property$.subscribe((result) => {
+      if (result && result.length > 0) {
+        this.property = result.find(property => property.id === propertyId);
+        this.selectedImage = this.property?.images[0]?.image
+        this.agentService.getAllAgents();// will also removce this later to test
+        this.agentService.agent$.subscribe((agent) => {
+          if(agent && agent.length > 0){
+            this.agent = agent.find((agent) => agent.id === this.property?.owner)
+          }
+        })
+      }   
   })
 
-  }}
+  })}
+  clickedImage :string | undefined;
+
+  selectImage(index: number) {
+    const clickedImage = this.property?.images[index]?.image;
+    
+    if (clickedImage !== undefined && this.property?.images[index]) {
+      const tempImage = this.selectedImage;
+      this.selectedImage = clickedImage;
+      this.property.images[index].image = tempImage!;
+    }
+}
+}
