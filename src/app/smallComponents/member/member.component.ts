@@ -10,7 +10,14 @@ import { Agent } from '../../agent';
       <img [src]="agent.image" class="w-full h-[90%]" alt="">
       <div class="text-center py-3">
         <p class="uppercase font-semibold">{{agent.name}}</p>
-        <p class="text-gray-600 text-sm  py-1">{{agent.email}}</p>
+        <div class="flex gap-5  ">
+          <a [href]="agent.facebook">
+            
+          </a>
+          <a [href]="agent.whatsapp">
+            
+            </a>
+        </div>
       </div>
     </div>
   `,
