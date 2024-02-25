@@ -9,13 +9,13 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [HouseComponent,DecimalPipe,RouterModule],
   template: `
-    <div class="h-fit shadow-md">
+    <div class="h-fit py-2 shadow-md">
       <a routerLink="{{property.id}}">
 
-        <div class="h-[90%] w-full overflow-hidden">
+        <div class="h-fit w-full overflow-hidden">
           <app-house [src]="property.images[0].image" />
         </div>
-        <div class="text-base">
+        <div class="text-base ">
           <p class=" py-2 font-semibold">&#x20a6;{{property.price | number:'1.2-2'}}</p>
           <p class=" py-1 font-semibold">{{property.street}} {{property.city}} {{property.zip_code}}</p>
           <p class=" py-1 text-gray-500 uppercase">{{property.bedroom}} Beds | {{property.bathroom}} baths | {{property.interior_size}} sq.ft</p>
