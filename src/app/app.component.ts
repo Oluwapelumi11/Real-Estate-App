@@ -21,6 +21,10 @@ export class AppComponent {
     this.route.navigateByUrl(`#${divId}`)
     
   }
+  scroll(divId: string){
+    const div = document.getElementById(divId);
+    div?.scrollIntoView({behavior:'smooth'})    
+  }
   
 
 
