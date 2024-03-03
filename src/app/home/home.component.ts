@@ -17,20 +17,20 @@ export class HomeComponent implements OnInit {
 
   houses: any[] =[
     {
-      url: "../../assets/img/skyscraper.jpg",
-      desc: "Living House"
+      image: "../../assets/img/skyscraper.jpg",
+      title: "Living House"
     },
     {
-      url: "../../assets/img/skyscraper.jpg", 
-      desc: "Living House"
+      image: "../../assets/img/skyscraper.jpg", 
+      title: "Living House"
     },
     {
-      url: "../../assets/img/skyscraper.jpg",
-      desc: "Living House"
+      image: "../../assets/img/skyscraper.jpg",
+      title: "Living House"
     },
     {
-      url: "../../assets/img/skyscraper.jpg",
-      desc: "Living House"
+      image: "../../assets/img/skyscraper.jpg",
+      title: "Living House"
     },
   ]
 

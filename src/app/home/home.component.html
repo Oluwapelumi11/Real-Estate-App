@@ -38,16 +38,18 @@
         <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">What area are you looking for</p>
         <p class="text-gray-400 sm:w-4/5 sm:text-base text-sm text-left sm:text-center">Whether it's a cozy apartment in the heart of the city or a spacious family home in the suburbs, we have a wide range of properties to suit your needs. Let us help you find your dream home today!</p>
     </div>
-    <div class="grid grid-cols-4 sm:gap-4 gap-y-5 gap-x-2">
+    <div class="sm:grid grid-cols-4 hidden sm:gap-4 gap-y-5 gap-x-2">
         @for (house of houses; track $index) {
         <div class="w-full col-span-full sm:col-span-1 relative overflow-hidden">
-            <app-house [src]="house.url"/>
-            <p class="absolute bottom-0 bg-black bg-opacity-30 py-3 px-6 text-xl text-center text-gray-50 w-full">{{house.desc}}</p>
+            <app-house [src]="house.image"/>
+            <p class="absolute bottom-0 bg-black bg-opacity-30 py-3 px-6 text-xl text-center text-gray-50 w-full">{{house.title}}</p>
         </div>
     }
-       
-
+</div>
+    <div class="md:hidden w-[98vw] h-[60vh] block overflow-hidden">
+        <app-buttoned-carousel [src]="houses" />
     </div>
+
 
 </div>
 <!-- end of second section -->
@@ -86,7 +88,7 @@
         <p class="sm:text-2xl text-lg text-gray-800 uppercase font-semibold">Exclusive listings</p>
         <p class="text-gray-400 sm:w-4/5 sm:text-base text-sm text-left sm:text-center">Discover our carefully curated collection of exclusive properties. Each listing is handpicked to offer you the finest selection of homes that meet your unique needs. From luxurious estates to charming urban apartments, explore our exclusive listings and find the perfect property for you.</p>
     </div>
-    <div class="w-[95vw] text-center mx-auto h-[80vh] ">
+    <div class="w-[95vw] text-center mx-auto h-[80vh] overflow-hidden ">
         
         <app-buttoned-carousel />
     </div>
