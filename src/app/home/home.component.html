@@ -101,10 +101,10 @@
         <p class="text-gray-400 sm:w-4/5 sm:text-base text-sm text-left sm:text-center">At Weston Real Estate, our area of expertise encompasses a wide range of services tailored to meet your real estate needs. With our comprehensive knowledge of the market, dedication to client satisfaction, and commitment to excellence, we specialize in assisting clients with buying, selling, and renting properties. </p>
     </div>
     <div class="grid grid-cols-3 sm:h-[90vh] ">
-        @for (item of [1,2,3,4,5,6]; track $index) {
+        @for (item of places; track $index) {
             <div class="relative w-full col-span-full sm:col-span-1 sm:gap-0 gap-4 overflow-hidden rounded-md">
-                <app-house [src]="'../../assets/img/apart.jpg'" />
-                <div class="flex justify-center items-center bg-black text-2xl font-bold bg-opacity-10 absolute top-0 h-full w-full text-white">Greenville</div>
+                <app-house [src]="item.image" />
+                <div class="flex justify-center items-center bg-black text-2xl font-bold bg-opacity-10 absolute top-0 h-full w-full text-white">{{item.title}}</div>
             </div>
         }
     </div>

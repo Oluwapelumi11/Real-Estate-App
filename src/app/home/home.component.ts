@@ -4,6 +4,7 @@ import { HouseComponent } from '../smallComponents/house/house.component';
 import { ButtonedCarouselComponent } from '../smallComponents/buttoned-carousel/buttoned-carousel.component';
 import { BlogComponent } from '../smallComponents/blog/blog.component';
 import { ActivatedRoute } from '@angular/router';
+import { Slide } from '../slide';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +35,14 @@ export class HomeComponent implements OnInit {
     },
   ]
 
+  places : Slide[] =[
+    {image:"../../assets/img/home2.jpeg",title: "Greenville"},
+    {image:"../../assets/img/home5.jpeg",title: "Newcastle"},
+    {image:"../../assets/img/house-pool.jpg",title: "Greenville"},
+    {image:"../../assets/img/beach-house.jpg",title: "Kansas"},
+    {image:"../../assets/img/apart.jpg",title: "Lagos"},
+    {image:"../../assets/img/house-bush.jpg",title: "Denver"},
+  ]
   constructor (private route: ActivatedRoute){}
 
   ngOnInit(): void {
