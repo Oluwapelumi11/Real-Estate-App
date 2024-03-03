@@ -7,3 +7,8 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+.cariusel{
+   background-size:inherit;
+    
+}

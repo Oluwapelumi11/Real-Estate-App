@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <div class="w-full h-fit px-8 py-5 bg-black text-white">
+    <div class="w-full h-fit sm:px-8 px-3 py-5 bg-black text-white">
       <div class="grid grid-cols-11 gap-8">
         <div class="text-left sm:col-span-2 col-span-full">
           <p class="text-xl font-bold uppercase py-5">WESTON</p>
