@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { OnDestroy, Component, Input, OnInit } from '@angular/core';
 import { Slide } from '../../slide';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-buttoned-carousel',
@@ -9,24 +10,46 @@ import { Slide } from '../../slide';
     CommonModule
   ],
   template: `
-  <div class="w-full h-full p-3  relative">
+  <div [@slideAnimation]="currentIndex" class="w-full h-full p-3  relative carousel"  [ngStyle]="{'background-image':getCurrentSlideUrl()}">
     <div class=" absolute flex justify-between px-8 text-4xl w-full z-10 items-center h-full" >
-    <button  (click)="goToPrev()"><</button>
-    <button  (click)="goToNext()">></button>
+    <button class="text-white font-bold "  (click)="goToPrev()"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="110" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"/>
+</svg></button>
+    <button class="text-white font-bold " (click)="goToNext()"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="110" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+</svg></button>
     </div>
-    <div class="w-full h-full absolute top-0 carousel " [ngStyle]="{'background-image':getCurrentSlideUrl()}" ></div>
+    <div class="w-full flex justify-center absolute bottom-5 space-x-4 gap-8"> 
+    @for (dot of src; track $index) {
+      
+      <span (click)="chooseIndex($index)" class="block w-2  h-2 rounded-full bg-white z-10" [ngClass]="{'ring-white ring-4':$index===currentIndex}"></span>
+    }
 
+    </div>
   </div>
 `,
 styles: `
 .carousel{
   background-repeat: no-repeat;
     background-position: center;
-    background-size:contain
+    background-size:cover
 }
-`
+`,
+animations: [
+  trigger('slideAnimation', [
+    transition(':increment', [
+      style({ transform: 'translateX(100%)' }),
+      animate('500ms', style({ transform: 'translateX(0)' }))
+    ]),
+    transition(':decrement', [
+      style({ transform: 'translateX(-100%)' }),
+      animate('300ms', style({ transform: 'translateX(0)' }))
+    ])
+  ])
+]
+
 })
-export class ButtonedCarouselComponent {
+export class ButtonedCarouselComponent implements OnInit, OnDestroy {
   @Input() src : Slide[]= [
     {image:"/assets/img/house-pool.jpg",title: "Living House"},
     {image:"/assets/img/night-gouse.jpg",title: "Living House"},
@@ -34,7 +57,13 @@ export class ButtonedCarouselComponent {
     {image:"/assets/img/house-pool.jpg",title: "Living House"}
   ]  
   currentIndex :number = 0;
-  
+  autoScrollInterval: any;
+
+
+  chooseIndex(index:number){
+    this.currentIndex = index;
+  }
+
   getCurrentSlideUrl(){
     return `url('${this.src[this.currentIndex].image}')`;
   }
@@ -45,13 +74,27 @@ export class ButtonedCarouselComponent {
   }
 
   goToNext(){
-    const islastSlide = this.currentIndex == this.src.length;
+    const islastSlide = this.currentIndex == this.src.length-1;
     const newSlide = islastSlide ? 0  : this.currentIndex + 1;
     this.currentIndex  = newSlide; 
   }
 
+ngOnInit(): void {
+  this.startAutoScroll();
+}
+  startAutoScroll() {
+    this.autoScrollInterval = setInterval(() => {
+        this.goToNext();
+    }, 3000); 
+}
 
+stopAutoScroll() {
+    clearInterval(this.autoScrollInterval);
+}
 
+ngOnDestroy(): void {
+  this.stopAutoScroll();
+}
 
 }
 
